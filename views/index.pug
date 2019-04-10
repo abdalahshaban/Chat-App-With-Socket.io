@@ -1,0 +1,45 @@
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    meta(http-equiv="X-UA-Compatible", content="ie=edge")
+    link(href="/bower_components/bootstrap/dist/css/bootstrap.css", rel="stylesheet")
+    link(href="/stylesheets/style.css", rel="stylesheet")
+    script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js")
+    script(src="/bower_components/bootstrap/dist/js/bootstrap.js")
+    script(src="/javascripts/main.js")
+    script(src="/socket.io/socket.io.js")
+    
+    
+    
+    title Chat IO
+  body
+    nav.navbar.navbar-inverse
+      .container
+        //- .navbar-header
+        a.navbar-brand(href='/') EChat
+    .container
+        .row
+          .col-md-8
+            #error
+            #userFormWrap
+              h1 Create UserName
+                form#UserForm
+                  input#username.form-control(type="text", name="name",placeholder="name")
+                  br
+                  button.btn.btn-success(type="submit") Submit
+            #mainWrap
+              h1 Speak your Mind
+              form#chatForm
+                .form-group 
+                  textarea#chatInput.form-control(name="body",placeholder="say something")
+                  br
+                  button.btn.btn-warning(type="submit") Submit
+                  br
+                  br
+
+                #chatWindow.card.card-body.bg-light
+          .col-md-4
+            h3 chat users
+            ul.list-group
+              #users
